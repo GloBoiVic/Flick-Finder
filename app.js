@@ -53,6 +53,7 @@ function displayMovieList(movies) {
 }
 
 /*
+	function loadMovieDetails
 	Get all the current movies on the page
 	Loop through the movies and add click Listener
 		On click of a movie, hide the search list
