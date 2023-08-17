@@ -50,17 +50,61 @@ function displayMovieList(movies) {
 		`;
 		searchList.appendChild(movieListItem);
 	});
+	loadMovieDetails();
 }
 
-/*
-	function loadMovieDetails
-	Get all the current movies on the page
-	Loop through the movies and add click Listener
-		On click of a movie, hide the search list
-		Empty search box value
-		Then fetch the movie using the imdbID we put on each movie
-*/
+function loadMovieDetails() {
+	const searchListMovies = searchList.querySelectorAll('.search-list-item');
+	searchListMovies.forEach((movie) => {
+		movie.addEventListener('click', async () => {
+			searchList.classList.add('hide-search-list');
+			movieSearchBox.value = '';
+			const result = await fetch(
+				`https://www.omdbapi.com/?i=${movie.dataset.id}&page=1&apikey=4c0208e7`
+			);
+			const movieDetails = await result.json();
+			console.log(movieDetails);
+			displayMovieDetails(movieDetails);
+		});
+	});
+}
 
-// function loadMovieDetails() {
-// 	const
-// }
+function displayMovieDetails(movie) {
+	resultGrid.innerHTML = ` 
+		<div class="movie-poster">
+			<img src="${
+				movie.Poster === 'N/A' ? 'image_not_found.png' : movie.Poster
+			}" alt="movie poster" />
+		</div>
+		<div class="movie-info">
+			<h3 class="movie-title">${movie.Title}</h3>
+			<ul class="movie-misc-info">
+				<li class="year">Year: ${movie.Year}</li>
+				<li class="rated">Rated: ${movie.Rated}</li>
+				<li class="released">Released: ${movie.Released}</li>
+			</ul>
+			<p class="genre"><b>Genre:</b> ${movie.Genre}</p>
+			<p class="writer">
+				<b>Writers:</b> ${movie.Writer}
+			</p>
+			<p class="actors">
+				<b>Actors:</b> ${movie.Actors}
+			</p>
+			<p class="plot">
+				<b>Plot:</b> ${movie.Plot}
+			</p>
+			<p class="language"><b>Language:</b> ${movie.Language}</p>
+			<p class="awards">
+				<b><i class="fas fa-award"></i></b> ${movie.Awards}
+			</p>
+		</div>
+	`;
+}
+
+movieSearchBox.addEventListener('keyup', findMovies);
+document.addEventListener('click', (e) => {
+	if (e.target.className !== 'form-control') {
+		searchList.classList.add('hide-search-list');
+	}
+	if (e.target.className === 'form-control') findMovies();
+});
