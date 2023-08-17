@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="movie-logo.png" alt="Logo" width="80" height="80">
+    <img src="assets/movie-logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h1 align="center">Flick Finder</h1>
