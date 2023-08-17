@@ -35,7 +35,7 @@ function displayMovieList(movies) {
 		movieListItem.dataset.id = movie.imdbID;
 		movieListItem.classList.add('search-list-item');
 		if (movie.Poster === 'N/A') {
-			moviePoster = 'image_not_found.png';
+			moviePoster = 'assets/image_not_found.png';
 		} else {
 			moviePoster = movie.Poster;
 		}
@@ -73,7 +73,7 @@ function displayMovieDetails(movie) {
 	resultGrid.innerHTML = ` 
 		<div class="movie-poster">
 			<img src="${
-				movie.Poster === 'N/A' ? 'image_not_found.png' : movie.Poster
+				movie.Poster === 'N/A' ? 'assets/image_not_found.png' : movie.Poster
 			}" alt="movie poster" />
 		</div>
 		<div class="movie-info">
