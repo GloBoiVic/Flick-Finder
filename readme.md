@@ -1,17 +1,15 @@
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="assets/movie-logo.png" alt="Logo" width="80" height="80">
-  </a>
+	<img src="assets/movie-logo.png" alt="Logo" width="80" height="80">
 
   <h1 align="center">Flick Finder</h1>
 
   <div align="center">
 		<h3>
-			<a href="https://globoivic.github.io/Music-Player/">
+			<a href="https://globoivic.github.io/Flick-Finder/">
 				Demo
 			</a>
 			<span> | </span>
-			<a href="https://github.com/GloBoiVic/Music-Player">
+			<a href="https://github.com/GloBoiVic/Flick-Finder">
 				Github Repo
 			</a>
 		</h3>
@@ -22,21 +20,17 @@
 
 ![Flick Finder Screenshot](assets/project-screenshot.png)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+Using OMDP's API, users can search up any movie and get a detailed page description of the movie queried
+
+- I learned how to fetch data using JavaScript's fetch API
+- How to inject and display that data dynamically on the page
+- I also utilized some advanced DOM manipulation techniques
 
 ### :computer: Built With
 
 - ![HTML][HTML-shield]
 - ![CSS][CSS-shield]
 - ![JavaScript][JavaScript-shield]
-
-### :fire: Features
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-### :heavy_exclamation_mark: Room for Improvement
-
-- [x] Add here
 
 ### :bust_in_silhouette: Contact
 
