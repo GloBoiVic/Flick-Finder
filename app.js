@@ -63,7 +63,6 @@ function loadMovieDetails() {
 				`https://www.omdbapi.com/?i=${movie.dataset.id}&page=1&apikey=4c0208e7`
 			);
 			const movieDetails = await result.json();
-			console.log(movieDetails);
 			displayMovieDetails(movieDetails);
 		});
 	});
